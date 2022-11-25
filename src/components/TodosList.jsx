@@ -12,7 +12,7 @@ const TodosList = ({ todos, setTodos, setEditTodo }) => {
     );
   };
 
-  const handleEdit = ({id}) => {
+  const handleEdit = ({ id }) => {
     const findTodo = todos.find((todo) => todo.id === id);
     setEditTodo(findTodo);
   };
@@ -28,7 +28,7 @@ const TodosList = ({ todos, setTodos, setEditTodo }) => {
           <input
             type="text"
             value={todo.title}
-            className="list"
+            className={`list ${todo.completed ? "complete" : ""}`}
             onChange={(e) => e.preventDefault()}
           />
           <div>
